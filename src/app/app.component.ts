@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { KanbanTitleComponent } from './components/kanbanGrid/kanbanTitle/kanbanTitle.component';
+import { KanbanTitleComponent } from './components/kanbanTitle/kanbanTitle.component';
 import { KanbanGridComponent } from './components/kanbanGrid/kanbanGrid.component';
 
 @Component({

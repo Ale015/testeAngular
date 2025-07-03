@@ -1,0 +1,13 @@
+<div class="kanban-select-container">
+  <select id="kanbanSelect"
+          class="kanban-select"
+          [(ngModel)]="selectedKanbanId"
+          (change)="onKanbanChange($event)">
+    <option *ngFor="let kanban of kanbans" [value]="kanban.id" class="kanban-option">
+      {{ kanban.nome }}
+    </option>
+  </select>
+  <svg class="kanban-select-arrow" viewBox="0 0 24 24">
+    <path d="M7 10l5 5 5-5z"/>
+  </svg>
+</div>
