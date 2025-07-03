@@ -1,1 +1,17 @@
-<p>kanbanGrid works!</p>
+<ktd-grid id="ktdGrid" 
+    [cols]="10"
+    [rowHeight]="250"
+    [layout]="KtdGridLayout"
+    [compactType]="null"
+    [backgroundConfig]="config"
+    (layoutUpdated)="onLayoutUpdated($event)"
+    >
+    <ktd-grid-item *ngFor="let item of KtdGridLayout; trackBy: trackById" [id]="item.id">
+        <!-- Your grid item content goes here -->
+         <p id="etapa">sfadfada</p>
+        <!-- Optional Custom placeholder template -->
+        <ng-template ktdGridItemPlaceholder>
+            <!-- Custom placeholder content goes here -->
+        </ng-template>
+    </ktd-grid-item>
+</ktd-grid>

@@ -4,17 +4,6 @@
 }
 
 
-.kanban-select-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 24px;
-  margin-bottom: 8px;
-  position: relative;
-  width: fit-content;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 .kanban-select {
   font-size: 2.2rem;
@@ -33,21 +22,4 @@
   z-index: 1;
 }
 
-/* Estilo para o dropdown do select (pode variar entre navegadores) */
-select.kanban-select option,
-select.kanban-select optgroup {
-  background-color: #363636;
-  color: #fff;
-}
-
-.kanban-select-arrow {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2.2rem;
-  height: 2.2rem;
-  pointer-events: none;
-  fill: #fff;
-  z-index: 2;
-}
+  
