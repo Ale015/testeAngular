@@ -1,6 +1,6 @@
 <ktd-grid id="ktdGrid" 
-    [cols]="10"
-    [rowHeight]="250"
+    [cols]="28"
+    [rowHeight]="28"
     [layout]="KtdGridLayout"
     [compactType]="null"
     [backgroundConfig]="config"
@@ -8,7 +8,7 @@
     >
     <ktd-grid-item *ngFor="let item of KtdGridLayout; trackBy: trackById" [id]="item.id">
         <!-- Your grid item content goes here -->
-         <p id="etapa">sfadfada</p>
+         <p id="etapa">Etapa</p>
         <!-- Optional Custom placeholder template -->
         <ng-template ktdGridItemPlaceholder>
             <!-- Custom placeholder content goes here -->
