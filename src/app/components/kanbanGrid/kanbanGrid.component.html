@@ -1,14 +1,15 @@
 <ktd-grid id="ktdGrid" 
     [cols]="28"
-    [rowHeight]="28"
+    [rowHeight]="40"
     [layout]="KtdGridLayout"
     [compactType]="null"
     [backgroundConfig]="config"
+    [preventCollision]="false"
     (layoutUpdated)="onLayoutUpdated($event)"
     >
     <ktd-grid-item *ngFor="let item of KtdGridLayout; trackBy: trackById" [id]="item.id">
         <!-- Your grid item content goes here -->
-         <p id="etapa">Etapa</p>
+         <p id="etapa"></p>
         <!-- Optional Custom placeholder template -->
         <ng-template ktdGridItemPlaceholder>
             <!-- Custom placeholder content goes here -->
