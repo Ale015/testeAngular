@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+#cardContainer {
+  border: 1px solid blue;
+  cursor: move;
+
+  z-index: 9999;
+}

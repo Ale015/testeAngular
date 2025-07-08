@@ -2,10 +2,14 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { KtdGridBackgroundCfg, KtdGridModule } from '@katoid/angular-grid-layout';
 import { KtdGridCompactType } from '@katoid/angular-grid-layout';
+import { EtapaComponent } from '../etapa/etapa.component';
+
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-kanban-grid',
-  imports: [KtdGridModule, CommonModule],
+  imports: [KtdGridModule, CommonModule, EtapaComponent],
   templateUrl: './kanbanGrid.component.html',
   styleUrl: './kanbanGrid.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
