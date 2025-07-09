@@ -25,3 +25,80 @@
 
   color: white;
 }
+
+
+:host {
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#etapaContainer {
+  width: 100%;
+  height: 100%;
+  border: 1px solid violet;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 3px;
+  padding: 0px;
+}
+
+
+#gridableArea {
+  margin-top: 10px;
+  border: 1px dashed orange;
+
+  width: 96%;
+  min-height: 90%;
+  max-height: 90%;
+
+  display: block;
+
+}
+
+#headerEtapa {
+
+  border: 1px solid rgba(255,0,0,0.4);
+
+  width: 96%;
+  
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+}
+
+:host {
+  display: block;
+  
+}
+
+button {
+  margin: 0px;
+  padding: 0px;
+
+  border: 2px solid rgba(114, 190, 0, 0.694);
+  border-radius: 4px;
+  padding: 0px 4px ;
+
+  background-color: transparent;
+  color: rgba(114, 190, 0, 0.694);
+
+  cursor: pointer;
+}
+
+
+:host {
+  display: block;
+}
+
+#cardContainer {
+  border: 1px solid blue;
+  cursor: move;
+
+  z-index: 9999;
+}

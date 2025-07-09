@@ -1,9 +1,0 @@
-  <select id="kanbanSelect"
-          class="kanban-select"
-          [(ngModel)]="selectedKanbanId"
-          (change)="onKanbanChange($event)">
-    <option *ngFor="let kanban of kanbans" [value]="kanban.id" class="kanban-option">
-      {{ kanban.nome }}
-    </option>
-  </select>
-
