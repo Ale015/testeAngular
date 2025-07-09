@@ -9,7 +9,7 @@
     >
     <ktd-grid-item [draggable]="false" *ngFor="let item of KtdGridLayout; trackBy: trackById" [id]="item.id">
         <!-- Your grid item content goes here -->
-         <app-etapa id="etapa"></app-etapa>
+         <app-etapa [idE]="item.id" id="etapa"></app-etapa>
         <!-- Optional Custom placeholder template -->
         <ng-template ktdGridItemPlaceholder>
             <!-- Custom placeholder content goes here -->

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { AddEtapaBtnComponent } from './addEtapa/addEtapaBtn/addEtapaBtn.component';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -15,6 +15,9 @@ import { CardComponent } from '../card/card/card.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EtapaComponent { 
+
+
+  @Input() idE: string | undefined;
 
   cards = [
     'Episode I - The Phantom Menace',
