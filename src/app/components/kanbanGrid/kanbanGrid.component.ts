@@ -2,15 +2,18 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { KtdGridBackgroundCfg, KtdGridModule } from '@katoid/angular-grid-layout';
 import { KtdGridCompactType } from '@katoid/angular-grid-layout';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
-import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/drag-drop';
+import { CdkKanbanDemoComponent } from './cdk-kanban-demo.component';
 
 
 @Component({
   selector: 'app-kanban-grid',
-  imports: [KtdGridModule, CommonModule, DragDropModule],
+  standalone: true,
+  imports: [KtdGridModule, CommonModule, DragDropModule, CdkKanbanDemoComponent],
   templateUrl: './kanbanGrid.component.html',
-  styleUrl: './kanbanGrid.component.scss',
+  styleUrls: ['./kanbanGrid.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KanbanGridComponent {
@@ -26,26 +29,70 @@ export class KanbanGridComponent {
   }
 
   KtdGridLayout = [
-    { "id": "0", "x": 0, "y": 0, "w": 4, "h": 14, cards: ['Episode I - The Phantom Menace',
-    'Episode II - Attack of the Clones']},
-    { "id": "1", "x": 12, "y": 6, "w": 4, "h": 4 , cards:[]},
-    { "id": "2", "x": 12, "y": 10, "w": 4, "h": 4, cards:[] },
-    { "id": "3", "x": 16, "y": 10, "w": 4, "h": 4, "minW": 2, "minH": 2 , cards:[]},
-    { "id": "4", "x": 4, "y": 0, "w": 4, "h": 14 , cards:[]},
-    { "id": "5", "x": 8, "y": 0, "w": 4, "h": 2 , cards:[]},
-    { "id": "6", "x": 8, "y": 6, "w": 4, "h": 4 , cards:[]},
-    { "id": "7", "x": 12, "y": 2, "w": 4, "h": 4 , cards:[]},
-    { "id": "8", "x": 8, "y": 2, "w": 4, "h": 4, cards:[] },
-    { "id": "9", "x": 12, "y": 0, "w": 12, "h": 2 ,cards:[]},
-    { "id": "10", "x": 20, "y": 2, "w": 4, "h": 4 ,cards:[]},
-    { "id": "11", "x": 24, "y": 0, "w": 4, "h": 4 ,cards:[]},
-    { "id": "12", "x": 16, "y": 2, "w": 4, "h": 4 ,cards:[]},
-    { "id": "13", "x": 8, "y": 10, "w": 4, "h": 4 ,cards:[]},
-    { "id": "14", "x": 16, "y": 6, "w": 4, "h": 4 ,cards:[]},
-    { "id": "15", "x": 20, "y": 6, "w": 4, "h": 4 ,cards:[]},
-    { "id": "16", "x": 20, "y": 10, "w": 4, "h": 4,cards:[] },
-    { "id": "17", "x": 24, "y": 8, "w": 4, "h": 6 ,cards:[]},
-    { "id": "18", "x": 24, "y": 4, "w": 4, "h": 4 ,cards:[]}
+    { id: "0", x: 0, y: 0, w: 4, h: 14, cards: [
+      'Episode I - The Phantom Menace',
+      'Episode II - Attack of the Clones',
+      'Episode III - Revenge of the Sith',
+      'Episode IV - A New Hope',
+    ]},
+    { id: "1", x: 12, y: 6, w: 4, h: 4, cards: [
+      'Episode V - The Empire Strikes Back',
+      'Episode VI - Return of the Jedi',
+    ]},
+    { id: "2", x: 12, y: 10, w: 4, h: 4, cards: [
+      'Episode VII - The Force Awakens',
+      'Episode VIII - The Last Jedi',
+    ] },
+    { id: "3", x: 16, y: 10, w: 4, h: 4, minW: 2, minH: 2, cards: [
+      'Episode IX - The Rise of Skywalker',
+      'Rogue One: A Star Wars Story',
+    ]},
+    { id: "4", x: 4, y: 0, w: 4, h: 14, cards: [
+      'Solo: A Star Wars Story',
+      'The Mandalorian',
+    ]},
+    { id: "5", x: 8, y: 0, w: 4, h: 2, cards: [
+      'Obi-Wan Kenobi',
+    ]},
+    { id: "6", x: 8, y: 6, w: 4, h: 4, cards: [
+      'The Book of Boba Fett',
+    ]},
+    { id: "7", x: 12, y: 2, w: 4, h: 4, cards: [
+      'Andor',
+    ]},
+    { id: "8", x: 8, y: 2, w: 4, h: 4, cards: [
+      'Star Wars Rebels',
+    ] },
+    { id: "9", x: 12, y: 0, w: 12, h: 2, cards: [
+      'Star Wars: The Clone Wars',
+    ]},
+    { id: "10", x: 20, y: 2, w: 4, h: 4, cards: [
+      'Star Wars Resistance',
+    ]},
+    { id: "11", x: 24, y: 0, w: 4, h: 4, cards: [
+      'The Bad Batch',
+    ]},
+    { id: "12", x: 16, y: 2, w: 4, h: 4, cards: [
+      'Tales of the Jedi',
+    ]},
+    { id: "13", x: 8, y: 10, w: 4, h: 4, cards: [
+      'Visions',
+    ]},
+    { id: "14", x: 16, y: 6, w: 4, h: 4, cards: [
+      'Young Jedi Adventures',
+    ]},
+    { id: "15", x: 20, y: 6, w: 4, h: 4, cards: [
+      'Forces of Destiny',
+    ]},
+    { id: "16", x: 20, y: 10, w: 4, h: 4, cards: [
+      'Galaxy of Adventures',
+    ] },
+    { id: "17", x: 24, y: 8, w: 4, h: 6, cards: [
+      'Droids',
+    ]},
+    { id: "18", x: 24, y: 4, w: 4, h: 4, cards: [
+      'Ewoks',
+    ]}
   ]
 
 
@@ -59,33 +106,36 @@ export class KanbanGridComponent {
     return item.id;
   }
 
+  // Corrigir: garantir que o método drop recebe o tipo correto
+  drop(event: CdkDragDrop<string[]>) {
+    const previousId = event.previousContainer.id.replace('dropList-', '');
+    const currentId = event.container.id.replace('dropList-', '');
 
+    const previous = this.KtdGridLayout.find(e => String(e.id) === String(previousId));
+    const current = this.KtdGridLayout.find(e => String(e.id) === String(currentId));
 
-drop(event: CdkDragDrop<string[]>) {
-  const previousId = event.previousContainer.id;
-  const currentId = event.container.id;
+    if (!previous || !current) return;
 
-  const previous = this.KtdGridLayout.find(e => e.id === previousId);
-  const current = this.KtdGridLayout.find(e => e.id === currentId);
-
-  if (!previous || !current) return;
-
-  if (previousId === currentId) {
-    moveItemInArray(current.cards, event.previousIndex, event.currentIndex);
-  } else {
-    transferArrayItem(
-      previous.cards,
-      current.cards,
-      event.previousIndex,
-      event.currentIndex
-    );
+    if (previousId === currentId) {
+      moveItemInArray(current.cards, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        previous.cards,
+        current.cards,
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
   }
-}
+
+
+
 
 connectedDropListIds(currentId: string): string[] {
+  // Retorna os IDs formatados para o DOM, exceto o atual
   return this.KtdGridLayout
-    .map(item => String(item.id))
-    .filter(id => id !== currentId);
+    .map(item => 'dropList-' + String(item.id))
+    .filter(id => id !== 'dropList-' + String(currentId));
 }
   
 }

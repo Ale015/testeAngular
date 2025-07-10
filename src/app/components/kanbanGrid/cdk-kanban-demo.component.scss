@@ -1,0 +1,55 @@
+.kanban-demo {
+  display: flex;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.etapa {
+  background: #f7f7fa;
+  border: 2px solid #bdbdbd;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.06);
+  min-width: 220px;
+  padding: 16px 8px 24px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.kanban-drop-list {
+  min-height: 80px;
+  background: #f3e5f5;
+  border: 2px dashed #7e57c2;
+  border-radius: 8px;
+  padding: 8px 0;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background 0.2s, border 0.2s;
+}
+
+.kanban-drop-list.cdk-drop-list-dragging {
+  background: #fffde7;
+  border-color: #ffb300;
+}
+
+.kanban-card {
+  border: 1px solid #7e57c2;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px 0 rgba(126,87,194,0.08);
+  padding: 10px 8px;
+  font-size: 15px;
+  color: #333;
+  cursor: grab;
+  user-select: none;
+  transition: box-shadow 0.2s, background 0.2s, border 0.2s;
+}
+
+.kanban-card.cdk-drag-dragging {
+  background: #ede7f6;
+  box-shadow: 0 8px 24px 0 rgba(126,87,194,0.18);
+  border-color: #ffb300;
+  z-index: 9999;
+}

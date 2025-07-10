@@ -1,7 +1,7 @@
 :host {
   display: flex;
   flex-direction: column;
-}
+
 
 #ktdGrid {
   align-self: center;
@@ -34,12 +34,23 @@
 
 #etapaContainer {
   width: 100%;
-  height: 100%;
-  border: 1px solid violet;
+  min-height: 320px;
+  background: #f7f7fa;
+  border: 2px solid #bdbdbd;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin: 8px 0;
+  padding: 0 0 12px 0;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+#etapaContainer:hover {
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.13);
+  border-color: #7e57c2;
 }
 
 .title {
@@ -48,28 +59,68 @@
 }
 
 
+
+.cdk-drop-list {
+  min-height: 60px;
+}
+
 #gridableArea {
-  margin-top: 10px;
-  border: 1px dashed orange;
+  margin: 12px auto 0 auto;
+  border: 2px dashed #7e57c2;
+  width: 92%;
+  min-height: 80px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: #f3e5f5;
+  transition: background 0.2s, border 0.2s;
+  overflow-y: auto;
+  padding: 8px 0;
+}
 
-  width: 96%;
-  min-height: 90%;
-  max-height: 90%;
+#gridableArea.cdk-drop-list-dragging {
+  background: #fffde7;
+  border-color: #ffb300;
+}
 
-  display: block;
+.cdk-drag {
+  user-select: none;
+}
+
+#cardContainer {
+  border: 1px solid #7e57c2;
+  cursor: grab;
+  z-index: 1;
+  background: #fff;
+  margin: 0 12px 10px 12px;
+  padding: 10px 8px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px 0 rgba(126,87,194,0.08);
+  transition: box-shadow 0.2s, background 0.2s, border 0.2s;
+  font-size: 15px;
+  color: #333;
+  user-select: none;
+}
+
+#cardContainer.cdk-drag-dragging {
+  background: #ede7f6;
+  box-shadow: 0 8px 24px 0 rgba(126,87,194,0.18);
+  border-color: #ffb300;
+  z-index: 9999;
+}
 
 }
 
 #headerEtapa {
-
-  border: 1px solid rgba(255,0,0,0.4);
-
-  width: 96%;
-  
+  border-bottom: 1px solid #e0e0e0;
+  background: #ede7f6;
+  width: 100%;
   display: flex;
-
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 8px 16px;
+  border-radius: 10px 10px 0 0;
 }
 
 :host {

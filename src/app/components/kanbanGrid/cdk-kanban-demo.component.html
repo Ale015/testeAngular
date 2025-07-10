@@ -1,0 +1,17 @@
+<div class="kanban-demo">
+  <div class="etapa" *ngFor="let etapa of etapas; let i = index">
+    <h3>{{ etapa.nome }}</h3>
+    <div
+      cdkDropList
+      [id]="'cdkDropList-' + i"
+      [cdkDropListData]="etapa.cards"
+      [cdkDropListConnectedTo]="connectedDropLists(i)"
+      (cdkDropListDropped)="drop($event)"
+      class="kanban-drop-list"
+    >
+      <div *ngFor="let card of etapa.cards; let j = index" cdkDrag class="kanban-card">
+        {{ card }}
+      </div>
+    </div>
+  </div>
+</div>

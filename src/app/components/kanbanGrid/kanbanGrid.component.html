@@ -13,21 +13,24 @@
                 <p class="title">Etapa</p>
                 <button>+</button>
             </div>
-    <div 
-    cdkDropList 
-    [id]="item.id"
-    [cdkDropListData]="item.cards"
-    [cdkDropListConnectedTo]="connectedDropListIds(item.id)"
-    (cdkDropListDropped)="drop($event)"
-    id="gridableArea"
->
-    <div *ngFor="let card of item.cards; let i = index" cdkDrag id="cardContainer">
+    <div
+      cdkDropList
+      [id]="'dropList-' + item.id"
+      [cdkDropListData]="item.cards"
+      [cdkDropListConnectedTo]="connectedDropListIds(item.id)"
+      (cdkDropListDropped)="drop($event)"
+      id="gridableArea"
+    >
+      <div *ngFor="let card of item.cards; let i = index" cdkDrag [cdkDragData]="card" id="cardContainer">
         Card : {{ card }}
+      </div>
     </div>
-</div>
         </div>
         <ng-template ktdGridItemPlaceholder>
             <!-- Custom placeholder content goes here -->
         </ng-template>
     </ktd-grid-item>
 </ktd-grid>
+
+<!-- Exemplo mínimo funcional de Kanban com CDK Drag & Drop -->
+<app-cdk-kanban-demo></app-cdk-kanban-demo>
