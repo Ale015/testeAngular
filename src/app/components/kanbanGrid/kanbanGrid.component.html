@@ -1,36 +1,31 @@
 <ktd-grid id="ktdGrid" 
-    [cols]="28"
-    [rowHeight]="40"
-    [layout]="KtdGridLayout"
+    [cols]="28" 
+    [rowHeight]="40" 
+    [layout]="KtdGridLayout" 
     [compactType]="null"
-    [backgroundConfig]="config"
-    [preventCollision]="false"
-    (layoutUpdated)="onLayoutUpdated($event)"
->
-    <ktd-grid-item [draggable]="false" *ngFor="let item of KtdGridLayout; trackBy: trackById" [id]="item.id">
+    [backgroundConfig]="config" 
+    [preventCollision]="false" 
+    (layoutUpdated)="onLayoutUpdated($event)">
+
+    <ktd-grid-item 
+    [draggable]="false" 
+    *ngFor="let item of KtdGridLayout; trackBy: trackById" [id]="item.id" class="p-4">
+    
         <div id="etapaContainer">
             <div id="headerEtapa">
                 <p class="title">Etapa</p>
                 <button>+</button>
             </div>
-    <div
-      cdkDropList
-      [id]="'dropList-' + item.id"
-      [cdkDropListData]="item.cards"
-      [cdkDropListConnectedTo]="connectedDropListIds(item.id)"
-      (cdkDropListDropped)="drop($event)"
-      id="gridableArea"
-    >
-      <div *ngFor="let card of item.cards; let i = index" cdkDrag [cdkDragData]="card" id="cardContainer">
-        Card : {{ card }}
-      </div>
-    </div>
+            <div cdkDropList [id]="'dropList-' + item.id" [cdkDropListData]="item.cards"
+                [cdkDropListConnectedTo]="connectedDropListIds(item.id)" (cdkDropListDropped)="drop($event)"
+                id="gridableArea">
+                <div *ngFor="let card of item.cards; let i = index" cdkDrag [cdkDragData]="card" id="cardContainer">
+                    {{ card }}
+                </div>
+            </div>
         </div>
         <ng-template ktdGridItemPlaceholder>
             <!-- Custom placeholder content goes here -->
         </ng-template>
     </ktd-grid-item>
 </ktd-grid>
-
-<!-- Exemplo mínimo funcional de Kanban com CDK Drag & Drop -->
-<app-cdk-kanban-demo></app-cdk-kanban-demo>

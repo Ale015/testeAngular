@@ -33,18 +33,21 @@
 }
 
 #etapaContainer {
+
+  justify-self: center;
+
   width: 100%;
-  min-height: 320px;
-  background: #f7f7fa;
-  border: 2px solid #bdbdbd;
+  height: 100%;
+  background: #e6ffec;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
   border-radius: 10px;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  margin: 8px 0;
-  padding: 0 0 12px 0;
+  padding: 0;
   transition: box-shadow 0.2s, border 0.2s;
 }
 
@@ -54,7 +57,7 @@
 }
 
 .title {
-  margin: 3px;
+  margin: 0px;
   padding: 0px;
 }
 
@@ -62,6 +65,8 @@
 
 .cdk-drop-list {
   min-height: 60px;
+  border: 2px solid blue;
+  height: 90%;
 }
 
 #gridableArea {
@@ -70,19 +75,17 @@
   width: 92%;
   min-height: 80px;
   max-height: 400px;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   align-items: stretch;
   background: #f3e5f5;
   transition: background 0.2s, border 0.2s;
   overflow-y: auto;
   padding: 8px 0;
+  border: 2px solid #ffb300;
+  
 }
 
-#gridableArea.cdk-drop-list-dragging {
-  background: #fffde7;
-  border-color: #ffb300;
-}
 
 .cdk-drag {
   user-select: none;
@@ -92,22 +95,26 @@
   border: 1px solid #7e57c2;
   cursor: grab;
   z-index: 1;
-  background: #fff;
-  margin: 0 12px 10px 12px;
+  background: #b5f9ff;
+  margin: 2px 8px 4px 8px;
   padding: 10px 8px;
   border-radius: 6px;
   box-shadow: 0 1px 4px 0 rgba(126,87,194,0.08);
   transition: box-shadow 0.2s, background 0.2s, border 0.2s;
-  font-size: 15px;
+  font-size: 8px;
   color: #333;
   user-select: none;
+
+  // max-width: 25%;
+  // max-height: 50%;
+
 }
 
 #cardContainer.cdk-drag-dragging {
   background: #ede7f6;
   box-shadow: 0 8px 24px 0 rgba(126,87,194,0.18);
   border-color: #ffb300;
-  z-index: 9999;
+  z-index: 1;
 }
 
 }
@@ -117,9 +124,9 @@
   background: #ede7f6;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 8px 16px;
+  padding: 8px 0px;
   border-radius: 10px 10px 0 0;
 }
 
